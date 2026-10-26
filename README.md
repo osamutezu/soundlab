@@ -1,26 +1,17 @@
-# FIELD / SOUND — v0.1
+# FIELD / SOUND v0.2
 
-Browser-based local-first sampler prototype. No external libraries or accounts.
+Extends v0.1 using the actual previous files. Includes recording, imports, waveform editor, 16 pads, IndexedDB save/load, and new BPM estimate, beat-grid overlay, transient overlay, slice preview and batch pad assignment.
 
-## Start
+## How to use
+1. Open index.html in Chrome or Safari. For microphone recording publish via HTTPS (e.g. GitHub Pages).
+2. Import audio and open EDIT.
+3. Click ANALYZE BPM. BPM is an approximate estimate, not guaranteed, particularly on short or non-rhythmic material. Adjust the BPM input manually.
+4. Choose TRANSIENT / EQUAL / BEAT slicing, set number of slices, click PREVIEW SLICES.
+5. Click ASSIGN TO PADS 01–16. Existing assignments on those pads are replaced.
+6. SAVE persists files, pad assignments and BPM locally; LOAD restores them.
 
-- Open `index.html` directly for importing and playback. For microphone recording, use an HTTPS origin (such as GitHub Pages) or `http://localhost`.
-- GitHub Pages: create a public repository, upload `index.html`, `style.css`, `app.js` to the repository root, then enable Pages → Deploy from a branch → main / root.
-- On Mac, you can also run `python3 -m http.server 8000` in this directory and open `http://localhost:8000`.
-
-## Features
-
-- Microphone capture via MediaRecorder, import audio supported by the browser
-- Waveform rendering, non-destructive region selection, preview, export region as new library clip
-- 16 pads, adjustable gain/speed, reverse, loop, gate, keyboard triggers
-- Tap tempo and manual BPM (no beat detection or tempo-sync in v0.1)
-- Project save/load in browser IndexedDB (audio blobs included)
-
-## Limitations
-
-- Browser storage is device- and origin-specific. Save does not synchronize devices or create a downloadable backup. Do not treat browser storage as the only copy of irreplaceable recordings.
-- Microphone recording formats and decoding differ across browsers. Some recordings may not be decodable on all devices.
-- Keyboard playback timing depends on the browser/device. No sample-accurate sequencer yet.
-- Reverse playback creates a temporary reversed buffer and may use additional memory for long files.
-- No recording monitoring, BPM detection, multi-track, effects or VJ link yet.
-- Recording may stop when the phone sleeps or browser tab is suspended.
+## Notes
+- Transient and tempo estimation are lightweight offline heuristics; results depend on audio content.
+- Beat grid starts at time zero and does not estimate downbeat offset.
+- No cloud upload; IndexedDB can be cleared by browser storage management.
+- Mac/iPhone/iPad have not been physically tested in this environment.
