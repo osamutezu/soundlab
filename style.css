@@ -9,3 +9,5 @@
 .playhead-overlay{position:absolute!important;inset:0;width:100%;height:100%;pointer-events:none;z-index:3}.rangeinfo{flex-wrap:wrap}#playPosition{color:var(--accent);font-variant-numeric:tabular-nums}
 
 .follow-toggle{display:inline-flex;align-items:center;gap:7px;color:var(--accent);font-size:11px;white-space:nowrap}.follow-toggle input{accent-color:var(--accent)}#wave{cursor:crosshair}#playPosition{font-weight:bold}.wavehint{z-index:4;pointer-events:none}.wavewrap{user-select:none}
+
+.import-status{margin-top:9px;font-size:12px;letter-spacing:.04em;color:#a8b2bf;overflow-wrap:anywhere}.import-status[data-state="loading"]{color:#f0d67a}.import-status[data-state="success"]{color:#98e5b3}.import-status[data-state="error"]{color:#ff9696}

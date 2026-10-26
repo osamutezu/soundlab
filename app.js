@@ -43,6 +43,32 @@ $('followWave').onchange=e=>{state.followWave=e.target.checked;const f=getFile(s
 $('cueStart').onclick=()=>setCue(0);
 $('cueBack').onclick=()=>setCue(state.cursor-5);
 $('cueForward').onclick=()=>setCue(state.cursor+5);
+// Restore the import listener removed in v0.3.2.
+$('fileInput').addEventListener('change',async e=>{
+  const input=e.currentTarget;
+  const files=Array.from(input.files||[]);
+  input.value='';
+  if(!files.length)return;
+  input.disabled=true;
+  const status=$('importStatus');
+  let ok=0;
+  try{
+    for(let i=0;i<files.length;i++){
+      const file=files[i];
+      status.textContent=`LOADING ${i+1}/${files.length} · ${file.name}`;
+      status.dataset.state='loading';
+      msg(`DECODING AUDIO · ${file.name}`);
+      await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
+      const result=await addFile(file,file.name);
+      if(result)ok++;
+      else{status.textContent=`FAILED · ${file.name} · unsupported format or decoding error`;status.dataset.state='error';}
+    }
+    if(ok===files.length){status.textContent=`COMPLETE · ${ok} FILE${ok===1?'':'S'} IMPORTED`;status.dataset.state='success';}
+    else if(ok){status.textContent=`PARTIAL · ${ok}/${files.length} FILES IMPORTED`;status.dataset.state='error';}
+    else{status.textContent='FAILED · Could not decode audio. Try WAV or MP3.';status.dataset.state='error';}
+  }catch(error){console.error(error);status.textContent=`ERROR · ${error.message||'Unknown import failure'}`;status.dataset.state='error';msg('IMPORT FAILED');}
+  finally{input.disabled=false;}
+});
 $('padSource').onchange=e=>{const f=getFile(e.target.value);assignPad(state.selected,f?.id||null,0,f?.buffer.duration||null)};for(const [el,key,fn] of [['padVolume','volume',Number],['padSpeed','speed',Number],['padReverse','reverse',Boolean],['padLoop','loop',Boolean],['padGate','gate',Boolean]])$(el).addEventListener(el.includes('Reverse')||el.includes('Loop')||el.includes('Gate')?'change':'input',e=>{state.pads[state.selected][key]=fn(e.target.type==='checkbox'?e.target.checked:e.target.value);updatePadValues()});$('clearPad').onclick=()=>assignPad(state.selected,null);$('editSource').onchange=e=>selectEdit(e.target.value);$('selectAll').onclick=()=>selectEdit(state.editId);$('playSelection').onclick=()=>{const f=getFile(state.editId);if(f)playFile(f,Math.min(state.cursor,f.buffer.duration-.001),f.buffer.duration)};$('trimToPad').onclick=()=>{if(!getFile(state.editId))return;assignPad(Number($('targetPad').value),state.editId,...state.sel);showTab('sample')};$('createClip').onclick=async()=>{const f=getFile(state.editId);if(!f)return;const [a,b]=state.sel,ctx=audio(),sr=f.buffer.sampleRate,n=Math.max(1,Math.round((b-a)*sr)),buf=ctx.createBuffer(f.buffer.numberOfChannels,n,sr);for(let c=0;c<buf.numberOfChannels;c++)buf.getChannelData(c).set(f.buffer.getChannelData(c).subarray(Math.round(a*sr),Math.round(a*sr)+n));await addFile(new Blob([wav(buf)],{type:'audio/wav'}),`Clip · ${f.name}`)};
 function wav(buf){const ch=buf.numberOfChannels,sr=buf.sampleRate,n=buf.length,out=new ArrayBuffer(44+n*ch*2),v=new DataView(out),str=(off,s)=>{for(let i=0;i<s.length;i++)v.setUint8(off+i,s.charCodeAt(i))};str(0,'RIFF');v.setUint32(4,36+n*ch*2,true);str(8,'WAVE');str(12,'fmt ');v.setUint32(16,16,true);v.setUint16(20,1,true);v.setUint16(22,ch,true);v.setUint32(24,sr,true);v.setUint32(28,sr*ch*2,true);v.setUint16(32,ch*2,true);v.setUint16(34,16,true);str(36,'data');v.setUint32(40,n*ch*2,true);let o=44;for(let i=0;i<n;i++)for(let c=0;c<ch;c++){const s=Math.max(-1,Math.min(1,buf.getChannelData(c)[i]));v.setInt16(o,s<0?s*32768:s*32767,true);o+=2}return out}
 

@@ -1,9 +1,5 @@
-FIELD / SOUND v0.3.2
+FIELD / SOUND v0.3.3
 
-- Click or drag the detailed waveform to position the cue cursor; click the overview to seek.
-- PLAY FROM CUE plays from that point to the end of the track.
-- FOLLOW WAVEFORM scrolls the detailed waveform around the playhead when zoomed.
-- SHIFT + drag on desktop selects a region for sample editing.
-- START, -5s and +5s buttons position the cue precisely.
-- STOP preserves the current position.
-- Previous features remain included.
+Bugfix: restored missing fileInput change handler from v0.3.2. Added explicit import status (loading / complete / error), support for reselecting same file. All other v0.3.2 files and functionality retained.
+
+Open index.html, or publish these files to GitHub Pages. M4A decoding depends on browser support.
