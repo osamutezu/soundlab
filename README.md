@@ -15,3 +15,7 @@ Extends v0.1 using the actual previous files. Includes recording, imports, wavef
 - Beat grid starts at time zero and does not estimate downbeat offset.
 - No cloud upload; IndexedDB can be cleared by browser storage management.
 - Mac/iPhone/iPad have not been physically tested in this environment.
+
+
+## v0.2.1
+BPM analysis status, progress, elapsed time, cancel, error/uncertain results. Analysis now uses a compact envelope of up to 90 seconds in a Web Worker. Transient slicing requires analysis first; onsets represent only the analyzed segment. BPM remains an estimate.
