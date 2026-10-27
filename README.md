@@ -6,3 +6,6 @@ Hot Cues and Memory Cues are held in session memory in this build; persistent st
 
 
 v0.5.1: FIXED PLAYHEAD toggle added to waveform editor. When enabled, waveform scrolls underneath the playhead (when zoom > 1); FOLLOW WAVEFORM is mutually exclusive. At track boundaries the playhead shifts naturally because the waveform is clamped to track bounds.
+
+
+v0.5.2: FIXED PLAYHEAD is always precisely centered at every zoom, including 1x. Waveform scrolls with blank space at start/end.
