@@ -1,15 +1,5 @@
-FIELD / SOUND v0.4.0
+FIELD / SOUND v0.5.0 — CUE system
 
-Built from the latest actual v0.3.6 files.
+Based on the actual v0.4.1 ZIP. Main Cue (back cue, pause-set, hold preview), eight Hot Cues, Memory Cues, waveform markers and optional quantization. Existing sequencer and audio import retained.
 
-New: 16-track step sequencer, 16/32 steps, swing, start/stop, example pattern, local project persistence. BPM follows top transport. Uses Web Audio clock with 120ms lookahead and 25ms scheduling loop.
-
-How to use: IMPORT AUDIO, assign sounds to PAD 1-3 in SAMPLE, open SEQUENCE, GENERATE EXAMPLE, PLAY PATTERN.
-
-Limitations: no pattern export yet, one pattern only, and scheduled sample start timing has not been browser-tested.
-
-
-v0.4.1 hotfix
-- Initialize activeAnalysis before file imports can call selectEdit.
-- Differentiate decoder errors from app errors.
-- Preserve all v0.4.0 sequencer functionality.
+Hot Cues and Memory Cues are held in session memory in this build; persistent storage and controller MIDI mapping are future work. Main Cue long press starts after 160 ms; touchscreen hold behavior may differ from hardware. Browser runtime testing is not yet completed.
