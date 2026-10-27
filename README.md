@@ -1,13 +1,13 @@
-FIELD / SOUND v0.3.4 — Import diagnostic repair
+FIELD / SOUND v0.3.5
 
-Based on the actual v0.3.3 project files. Existing audio/editor/pad features retained.
+Based on v0.3.4 actual ZIP, retaining its files and features.
 
-Changes:
-- Visible native file picker in addition to the import label.
-- Explicit LOADING / COMPLETE / FAILED states.
-- Detailed audio decode errors shown in the page.
-- Wider file selection filter including M4A.
-- Script error indicator.
-- Filename re-selection supported.
+Fixes:
+- PLAY starts at the current playhead and runs to the end.
+- PAUSE retains the current position.
+- STOP returns to 0; header STOP stops all pads and preview.
+- Click/drag waveform to seek, including while playing.
+- End-of-track PLAY restarts from beginning.
+- Clearer transport labels and waveform hints.
 
-If the file is selected but fails decoding, note the displayed error. M4A support depends on the codec and browser.
+Browser functional testing is still required.
