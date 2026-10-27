@@ -11,3 +11,10 @@
 .follow-toggle{display:inline-flex;align-items:center;gap:7px;color:var(--accent);font-size:11px;white-space:nowrap}.follow-toggle input{accent-color:var(--accent)}#wave{cursor:crosshair}#playPosition{font-weight:bold}.wavehint{z-index:4;pointer-events:none}.wavewrap{user-select:none}
 
 .import-status{margin-top:9px;font-size:12px;letter-spacing:.04em;color:#a8b2bf;overflow-wrap:anywhere}.import-status[data-state="loading"]{color:#f0d67a}.import-status[data-state="success"]{color:#98e5b3}.import-status[data-state="error"]{color:#ff9696}
+
+/* v0.3.4: make the native picker visible and operable even if label behavior differs */
+.upload #fileInput{display:block!important;width:100%;max-width:100%;padding:10px;background:#252933;border:1px solid #647b53;color:#f0f0ee}
+.import-status{padding:10px 12px;border:1px solid #3b4650;overflow-wrap:anywhere}
+.import-status[data-state="loading"]{color:#e9d58d;border-color:#a38b42}
+.import-status[data-state="success"]{color:#b9fa77;border-color:#647b53}
+.import-status[data-state="error"],.import-error{color:#ff9292;white-space:pre-wrap;overflow-wrap:anywhere}

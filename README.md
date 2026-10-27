@@ -1,5 +1,13 @@
-FIELD / SOUND v0.3.3
+FIELD / SOUND v0.3.4 — Import diagnostic repair
 
-Bugfix: restored missing fileInput change handler from v0.3.2. Added explicit import status (loading / complete / error), support for reselecting same file. All other v0.3.2 files and functionality retained.
+Based on the actual v0.3.3 project files. Existing audio/editor/pad features retained.
 
-Open index.html, or publish these files to GitHub Pages. M4A decoding depends on browser support.
+Changes:
+- Visible native file picker in addition to the import label.
+- Explicit LOADING / COMPLETE / FAILED states.
+- Detailed audio decode errors shown in the page.
+- Wider file selection filter including M4A.
+- Script error indicator.
+- Filename re-selection supported.
+
+If the file is selected but fails decoding, note the displayed error. M4A support depends on the codec and browser.
