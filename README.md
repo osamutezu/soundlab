@@ -9,3 +9,10 @@ v0.5.1: FIXED PLAYHEAD toggle added to waveform editor. When enabled, waveform s
 
 
 v0.5.2: FIXED PLAYHEAD is always precisely centered at every zoom, including 1x. Waveform scrolls with blank space at start/end.
+
+
+## v0.5.3
+- Main CUE, Hot CUE A–H, Memory CUE positions are included in SAVE PROJECT and RESTORE.
+- Existing saves without CUE data remain supported.
+- CUE positions are validated against the decoded audio duration on restore.
+- All features from v0.5.2 retained.
