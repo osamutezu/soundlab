@@ -32,3 +32,17 @@ v0.5.2: FIXED PLAYHEAD is always precisely centered at every zoom, including 1x.
 - Non-destructive source offsets, scheduled multitrack playback.
 - Arrangement data saved in existing local IndexedDB project.
 - Known limits: no region splitting, MIDI, mixer, or automatic waveform-to-grid time stretching yet.
+
+
+## v0.6.1 — Non-destructive Hot Cue to Pad
+
+1. Import or record an audio file, open EDIT, and set Hot Cues A–H.
+2. In HOT CUE → PAD select a registered cue, destination PAD 01–16, and the end mode.
+3. NEXT HOT CUE / END plays from the selected cue to the next chronological cue, or the original file end. END OF FILE plays to the end.
+4. Click ASSIGN TO PAD. The SAMPLE pad plays the selected range from the **original** decoded audio buffer. No audio file is cropped, rewritten, or duplicated.
+5. Save Project and Restore to preserve the pad's file ID, start/end offsets, and cue provenance. Existing pad assignments remain compatible.
+
+Note: Pad ranges are snapshots at assignment time. Changing or deleting a Hot Cue afterward does not alter previously assigned pads. Reassign to update the range.
+
+
+v0.6.2: Fixed navigation buttons between RECORD / SAMPLE / EDIT / SEQUENCE / ARRANGE. Existing project state persists while switching tabs. Use SAVE to persist in IndexedDB; LOAD to restore.
