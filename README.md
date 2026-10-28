@@ -16,3 +16,19 @@ v0.5.2: FIXED PLAYHEAD is always precisely centered at every zoom, including 1x.
 - Existing saves without CUE data remain supported.
 - CUE positions are validated against the decoded audio duration on restore.
 - All features from v0.5.2 retained.
+
+## v0.5.4 — Waveform drag scrubbing
+- Drag waveform horizontally to move the track position by the same proportional distance (left drag advances, right drag rewinds).
+- Works in FIXED PLAYHEAD at 1× zoom and at higher zoom. The playhead stays centered.
+- Single click seeks; Shift+drag still selects a range.
+- When dragging during playback, playback temporarily stops and resumes from the scrubbed position on release.
+
+
+## v0.6.0 — ARRANGE
+- Logic Pro-inspired multi-track timeline, beat/bar ruler, playhead, transport.
+- Import audio via RECORD, select source in ARRANGE, add audio region.
+- Drag region to move, drag right edge to trim, double-click to edit source.
+- Track Mute, Solo, Volume, region duplication and deletion.
+- Non-destructive source offsets, scheduled multitrack playback.
+- Arrangement data saved in existing local IndexedDB project.
+- Known limits: no region splitting, MIDI, mixer, or automatic waveform-to-grid time stretching yet.
