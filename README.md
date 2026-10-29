@@ -46,3 +46,12 @@ Note: Pad ranges are snapshots at assignment time. Changing or deleting a Hot Cu
 
 
 v0.6.2: Fixed navigation buttons between RECORD / SAMPLE / EDIT / SEQUENCE / ARRANGE. Existing project state persists while switching tabs. Use SAVE to persist in IndexedDB; LOAD to restore.
+
+
+## v0.6.3 Portable project export / import
+
+- EXPORT downloads a `.fsproject` file containing project metadata and the **original, unmodified** audio blobs.
+- IMPORT validates the container, reads and decodes all embedded audio, asks for confirmation, writes to IndexedDB, and triggers existing LOAD restoration.
+- File format: `FSPROJ01` (8 bytes), 32-bit big-endian JSON byte length, JSON manifest, audio blob bytes concatenated in manifest order.
+- Import replaces the current browser project; export it first. No server upload. Large recordings produce large project files.
+- Tested with JavaScript syntax and ZIP integrity checks; interactive browser playback/import not verified.
