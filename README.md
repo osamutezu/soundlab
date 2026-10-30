@@ -69,3 +69,9 @@ Limitations: clip playback is scheduled at PLAY time; edits during playback requ
 - Source audio is never rewritten. Pad source references and their ranges persist through existing SAVE/EXPORT.
 - No speech recognition or source separation: detection is based on signal energy. Check and edit the boundaries before assigning.
 - Chopper preview boundaries are transient until assigned; saving a project preserves assigned pad ranges, not the temporary detection list.
+
+
+## v0.7.2 — PAD Effects
+Added non-destructive low-pass filter, feedback delay and convolution reverb to each PAD. Each effect has an independent bypass. PAD effects are saved through existing project SAVE/LOAD and EXPORT/IMPORT because parameters live on pad objects. Sequence snapshots and recorded performances also carry pad settings. Delay and reverb are generated locally without external downloads.
+
+Known limitations: effects are not yet applied to EDIT source preview or standalone audio ARRANGE regions; no effect automation. Browser audio playback still needs real-device verification.
