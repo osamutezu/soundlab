@@ -53,3 +53,10 @@ Limitations: clip playback is scheduled at PLAY time; edits during playback requ
 - SAVE/LOAD and EXPORT/IMPORT preserve the step settings. Old projects default to 100% velocity and 0 ms offset.
 - Swing remains available. This is per-hit groove editing, not an automatic groove-template extractor.
 - Browser audio playback is not yet verified; syntax and ZIP integrity are checked.
+
+
+## v0.7.0 — Sample pitch and envelope
+- PAD PITCH ±24 semitones, in addition to SPEED. Uses playbackRate: pitch and duration change together (not independent time stretching).
+- ATTACK / DECAY / SUSTAIN / RELEASE controls per pad. ADSR gain is scheduled for one-shot pad playback and arrangement sequence/performance playback.
+- Settings are stored on pad objects and inherited by existing snapshot-based project persistence. Old project pads fall back to defaults. Original audio is not modified.
+- Note: Looping and gate mode use the original stop behavior; this version does not yet implement a note-off-triggered release. Browser playback needs testing.

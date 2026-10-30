@@ -46,3 +46,6 @@
 
 /* v0.6.9: non-destructive per-hit groove controls */
 .step-editor{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:13px 16px;border-top:1px solid #363636;border-bottom:1px solid #363636}.step-editor label{display:flex;align-items:center;gap:8px;font-size:12px}.step-editor input[type=range]{width:125px;accent-color:#a9d9bc}.step-editor output{min-width:58px;font-variant-numeric:tabular-nums}.step-editor .hint{flex-basis:100%}.seq-cell.selected-step{outline:2px solid #e6f5a6;outline-offset:-2px}
+
+/* v0.7.0 pad sound shaping */
+.pad-sound-shape{display:flex;flex-direction:column;gap:10px;border:1px solid var(--line,#333);padding:14px;margin:8px 0;border-radius:8px}.pad-sound-shape label{display:flex;flex-wrap:wrap;align-items:center;gap:10px}.pad-sound-shape input[type=range]{flex:1;min-width:120px}.pad-sound-shape output{min-width:55px;text-align:right}
