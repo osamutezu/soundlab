@@ -27,3 +27,11 @@ Limitations: clip playback is scheduled at PLAY time; edits during playback requ
 - Very quiet desired sounds may also be attenuated; always compare by bypassing. Original Blob and AudioBuffer remain untouched.
 - Per-source settings are stored in SAVE/LOAD and portable EXPORT/IMPORT.
 - Noise gate is **not** yet applied to PAD or ARRANGE; EQ still behaves as before.
+
+
+## v0.6.7 — Frequency Target (notch)
+- Added an optional frequency-selective notch filter to EDIT preview after the existing broadband noise gate and before 3-band EQ.
+- Adjustable center frequency (60–12000 Hz), Q (0.3–20), depth (0–100% wet mix), independent bypass. Adjustments update during playback.
+- Intended for narrowband hum/whine; NOT spectral noise-profile subtraction, AI separation, or full-band denoising.
+- Per-source non-destructive settings preserved in SAVE/LOAD and EXPORT/IMPORT; previous project defaults remain safe.
+- Existing source files, pad playback, sequencer and arrangement are unchanged. Browser audio playback not verified.
