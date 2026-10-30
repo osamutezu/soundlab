@@ -45,3 +45,11 @@ Limitations: clip playback is scheduled at PLAY time; edits during playback requ
 - No MIDI velocity or audio recording of the output yet; records pad triggers only.
 - Preview and arrangement replay events against current project BPM.
 - Fixed pre-existing duplicated project export/import handlers accidentally nested in renderSequencer.
+
+
+## v0.6.9 — Velocity / Micro Timing
+- SEQUENCE: click any step cell to select it, then edit VELOCITY (0–100%) and MICRO TIMING (−60 to +60 ms). A step may be selected even when OFF; settings are retained until activated.
+- SEQUENCE playback applies each hit's velocity and time offset; the ARRANGE snapshot stores both and uses them during playback. The original audio is never modified.
+- SAVE/LOAD and EXPORT/IMPORT preserve the step settings. Old projects default to 100% velocity and 0 ms offset.
+- Swing remains available. This is per-hit groove editing, not an automatic groove-template extractor.
+- Browser audio playback is not yet verified; syntax and ZIP integrity are checked.
