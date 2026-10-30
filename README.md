@@ -1,3 +1,14 @@
+# FIELD / SOUND v0.8.0 — PIANO ROLL / SYNTH NOTES
+
+- New PIANO ROLL tab: 4 bars / 16 beats / 64 sixteenth-note steps / MIDI pitches 48–83 (C3–B5).
+- Click grid to add/select notes; edit selected duration and velocity; delete selected note.
+- Built-in oscillator synthesizer with four waveforms; preview through existing master output.
+- SEND TO ARRANGE creates a non-destructive MIDI region snapshot; ARRANGE plays it alongside audio, sequences, and performances.
+- MIDI pattern and MIDI regions are included in SAVE / LOAD and portable EXPORT / IMPORT.
+- Does not support external MIDI devices or standard .mid import/export yet.
+- Note start times are snapped to sixteenth notes; free-timing MIDI recording is not yet implemented.
+- Existing functions retained from v0.7.2.
+
 # FIELD / SOUND v0.6.4
 
 Built from v0.6.3. Adds Sequence → Arrange non-destructive clips.

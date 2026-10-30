@@ -55,3 +55,6 @@
 
 /* v0.7.2 effects controls */
 #padFxReset{align-self:flex-start}.pad-sound-shape .row{justify-content:space-between}
+
+/* v0.8.0 — piano roll */
+.midi-scroll{overflow:auto;max-height:620px;padding:12px;background:#12151a}.midi-grid{display:grid;grid-template-columns:70px repeat(64,24px);grid-auto-rows:26px;width:max-content;gap:1px}.midi-key{position:sticky;left:0;z-index:2;padding:2px 6px;text-align:left;background:#d7dce0;color:#111;border:1px solid #79848e;font:11px monospace}.midi-key.black{background:#333e48;color:#eee}.midi-cell{padding:0;border:1px solid #29313b;background:#1c242e;touch-action:manipulation}.midi-cell.beat{border-left:1px solid #59626a}.midi-cell.bar{border-left:2px solid #9baab4}.midi-cell.has-note{background:#9fdb85;border-color:#c6f6ac}.midi-cell.selected{outline:2px solid white;outline-offset:-2px}.midi-cell:hover{background:#637b65}.midi-cell.has-note:hover{background:#c6f6ac}
