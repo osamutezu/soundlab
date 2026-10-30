@@ -60,3 +60,12 @@ Limitations: clip playback is scheduled at PLAY time; edits during playback requ
 - ATTACK / DECAY / SUSTAIN / RELEASE controls per pad. ADSR gain is scheduled for one-shot pad playback and arrangement sequence/performance playback.
 - Settings are stored on pad objects and inherited by existing snapshot-based project persistence. Old project pads fall back to defaults. Original audio is not modified.
 - Note: Looping and gate mode use the original stop behavior; this version does not yet implement a note-off-triggered release. Browser playback needs testing.
+
+
+## v0.7.1 — Vocal / Field Chopper
+- EDIT > VOCAL / FIELD CHOPPER: select a range with Shift+drag, choose Attack/Onset, Silence/Phrase or Equal, count 2–16 and sensitivity. Detect proposed slices.
+- Editable start/end boundaries (in seconds) and individual preview. Neighbouring boundaries move together.
+- Assign slices to PAD 01–16 starting at any chosen pad. Occupied pads require confirmation before replacement.
+- Source audio is never rewritten. Pad source references and their ranges persist through existing SAVE/EXPORT.
+- No speech recognition or source separation: detection is based on signal energy. Check and edit the boundaries before assigning.
+- Chopper preview boundaries are transient until assigned; saving a project preserves assigned pad ranges, not the temporary detection list.
