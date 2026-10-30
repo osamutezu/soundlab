@@ -35,3 +35,13 @@ Limitations: clip playback is scheduled at PLAY time; edits during playback requ
 - Intended for narrowband hum/whine; NOT spectral noise-profile subtraction, AI separation, or full-band denoising.
 - Per-source non-destructive settings preserved in SAVE/LOAD and EXPORT/IMPORT; previous project defaults remain safe.
 - Existing source files, pad playback, sequencer and arrangement are unchanged. Browser audio playback not verified.
+
+
+## v0.6.8 — PAD PERFORMANCE RECORDING
+- PERFORM tab: play 16 pads by touch/mouse/keyboard; RECORD TAKE captures unquantized pad hit times.
+- PREVIEW TAKE plays the captured performance; SEND TAKE TO ARRANGE creates a non-destructive region with a snapshot of pad assignments and event timing.
+- Performance regions are saved in arrangement through SAVE/LOAD and EXPORT/IMPORT.
+- A new take in PERFORM replaces the unsent in-memory take; send it to ARRANGE first to keep it.
+- No MIDI velocity or audio recording of the output yet; records pad triggers only.
+- Preview and arrangement replay events against current project BPM.
+- Fixed pre-existing duplicated project export/import handlers accidentally nested in renderSequencer.

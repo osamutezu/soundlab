@@ -40,3 +40,6 @@
 .noise-panel{border:1px solid #39414d;padding:16px;margin:14px 0;background:#141a21}.noise-controls{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin:14px 0}.noise-controls label{display:flex;align-items:center;gap:8px;font-size:12px}.noise-controls input[type=range]{width:130px}.noise-controls output{min-width:42px}.noise-controls span{font:11px monospace;opacity:.8}
 
 .target-controls{border-top:1px solid #39414d;margin-top:15px;padding-top:14px}.target-controls .noise-controls{margin-bottom:6px}.target-controls output{min-width:64px}
+
+/* v0.6.8: live pad performance */
+.perf-pads{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;padding:16px;max-width:760px}.perf-pad{height:85px;touch-action:manipulation;font-weight:bold}.perf-pad:active{background:var(--accent);color:var(--bg)}.perf-events{padding:16px;border-top:1px solid var(--line);color:var(--muted);font-size:11px;max-height:140px;overflow:auto}@media(max-width:600px){.perf-pads{gap:6px}.perf-pad{height:66px;padding:5px}}
