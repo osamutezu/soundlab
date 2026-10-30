@@ -18,3 +18,12 @@ Limitations: clip playback is scheduled at PLAY time; edits during playback requ
 - Settings stored in local SAVE/LOAD and portable EXPORT/IMPORT. Existing v0.6.4 features preserved.
 - Scope: EDIT source preview playback only. PAD/SEQUENCE/ARRANGE audio routing and noise reduction are NOT yet modified.
 - Original audio blobs remain untouched. Loud boosts may clip; reduce MASTER as needed.
+
+
+## v0.6.6 — Noise Control (EDIT preview)
+- Non-destructive **broadband adaptive noise gate** for preview only, not spectral/AI denoising.
+- Shift+drag select 0.1–30 s of noise-only audio, LEARN estimates RMS noise reference.
+- Enable, reduction (0–100%), sensitivity (0.5–8×), reset. Re-press PLAY after adjusting to hear updates.
+- Very quiet desired sounds may also be attenuated; always compare by bypassing. Original Blob and AudioBuffer remain untouched.
+- Per-source settings are stored in SAVE/LOAD and portable EXPORT/IMPORT.
+- Noise gate is **not** yet applied to PAD or ARRANGE; EQ still behaves as before.
