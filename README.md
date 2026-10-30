@@ -10,3 +10,11 @@ Built from v0.6.3. Adds Sequence → Arrange non-destructive clips.
 - Existing audio regions and all earlier views are preserved.
 
 Limitations: clip playback is scheduled at PLAY time; edits during playback require restarting. The clip's step pattern is a snapshot, not linked to later sequencer edits. Tempo changes while playing require restarting. No in-browser audio regression test was performed.
+
+
+## v0.6.5 — EDIT preview 3-band EQ
+- Non-destructive per-audio LOW (100 Hz shelf), MID (1 kHz peaking), HIGH (10 kHz shelf) using Web Audio BiquadFilterNode.
+- Rotary drag, keyboard, numerical entry, 0 dB reset, EQ bypass. Range −24 to +12 dB.
+- Settings stored in local SAVE/LOAD and portable EXPORT/IMPORT. Existing v0.6.4 features preserved.
+- Scope: EDIT source preview playback only. PAD/SEQUENCE/ARRANGE audio routing and noise reduction are NOT yet modified.
+- Original audio blobs remain untouched. Loud boosts may clip; reduce MASTER as needed.
