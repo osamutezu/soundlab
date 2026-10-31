@@ -86,3 +86,12 @@ Limitations: clip playback is scheduled at PLAY time; edits during playback requ
 Added non-destructive low-pass filter, feedback delay and convolution reverb to each PAD. Each effect has an independent bypass. PAD effects are saved through existing project SAVE/LOAD and EXPORT/IMPORT because parameters live on pad objects. Sequence snapshots and recorded performances also carry pad settings. Delay and reverb are generated locally without external downloads.
 
 Known limitations: effects are not yet applied to EDIT source preview or standalone audio ARRANGE regions; no effect automation. Browser audio playback still needs real-device verification.
+
+
+## v0.8.1 — Electric Piano / Bass Synth
+- PIANO ROLL > WAVEに ELECTRIC PIANO / BASS SYNTH を追加。
+- ELECTRIC PIANO: 正弦波＋短い倍音と減衰エンベロープの簡易エレピ風音色。
+- BASS SYNTH: sawtooth＋時間変化するローパスフィルターのベース音色。
+- ノート、velocity、長さ、アレンジメントのスナップショット、SAVE/LOAD、EXPORT/IMPORTの既存データ形式を維持。
+- 既存の4波形も使用可能。音色はWeb Audio合成による簡易プリセットで、実機のエレピやベースの完全な再現ではありません。
+- 実機ブラウザでの音声動作は未検証です。
